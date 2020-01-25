@@ -1,0 +1,11 @@
+<% if(local.user){ %>
+    <% res.redirect('/') %>
+<% }else  {%>
+
+<form action="/users/login" method="POST">
+    <input type="email" name="email" placeholder="Enter email">
+    <input type="password" name="password" placeholder="Enter password">
+    <input type="submit" value="Login">
+</form>
+<a href="/users/registration">Register</a>
+<%}%>

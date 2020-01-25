@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <% include partials/header.ejs %>
+    <% if(user){ %>
+    <span class="user-details">Name:</span><%= user.name%>
+    <hr>
+    <span class="user-details">Email:</span><%= user.email%>
+    <hr>
+    <span class="user-details">Username</span><%= user.username%>
+    
+    <br>
+    <br>
+    <a href="/users/edit">Edit Details</a>
+    <%}%>
+</body>
+</html>

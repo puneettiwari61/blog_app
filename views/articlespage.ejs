@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Articles</title>
+</head>
+<body>
+    <% if(user){%>
+        <h1>Welcome to myBlog <%= user.name %></h1>
+        <%}else{%>
+            <h1>Welcome to myBlog</h1>
+        <%}%>
+    <div>
+        <a href="articles/create"><span>Post an article : </span></a>
+    </div>
+    <hr>
+    <div class="list_container">
+        <ul>
+            <% articleArray.forEach(article =>{%>
+                <li>
+                    <h4><%= article.title %></h4>
+                    <p><%= article.description.substring(0,10)+"..." %></p>
+                    Likes<%= article.likes %>
+                    <a href="articles/<%= article.id%>/view">View</a>
+                    <h4>written by:<%= article.authorId.name %></h4>
+                   
+                </li>
+            <%})%>
+        </ul>
+        <% if(user){%>
+            <a href="/users/logout">logout</a>
+        <%}else{ %>
+            <a href="/users/login">login</a>
+        <%}%>
+    </div>
+
+</body>
+</html>
